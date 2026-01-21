@@ -1,0 +1,16 @@
+{
+    "name": "C# (.NET) and PostgreSQL",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/TeamScope",
+
+	"mounts": [
+        // Только необходимые SSH файлы
+        // "source=${localEnv:HOME}/.ssh/${GitHub_SSH_KEY_NAME},target=/home/vscode/.ssh/${GitHub_SSH_KEY_NAME},type=bind,consistency=cached",
+        // "source=${localEnv:HOME}/.ssh/${GitHub_SSH_KEY_NAME}.pub,target=/home/vscode/.ssh/${GitHub_SSH_KEY_NAME}.pub,type=bind,consistency=cached",
+        // "source=${localEnv:HOME}/.ssh/known_hosts,target=/home/vscode/.ssh/known_hosts,type=bind,consistency=cached",
+        
+        // Git конфиг хоста
+        "source=${localEnv:HOME}/.gitconfig,target=/home/vscode/.gitconfig-host,type=bind,consistency=cached,readonly"
+    ]
+}

@@ -1,0 +1,8 @@
+.DS_Store
+.vscode
+
+pgadmin-data
+postgres-data
+doc/doxygen/doxy_data
+doc/structurizr/.structurizr
+doc/structurizr/workspace.json

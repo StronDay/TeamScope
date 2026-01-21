@@ -1,0 +1,58 @@
+version: '3.8'
+
+networks:
+  dev-network:
+    driver: bridge
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/workspaces/TeamScope:cached
+    ports:
+      - "8000:8000"
+    networks:
+      - dev-network
+
+  db:
+    image: postgres:14.3
+    restart: unless-stopped
+    volumes:
+      - ../postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - dev-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+    ports:
+      - "5050:80"
+    volumes:
+      - ../pgadmin-data:/var/lib/pgadmin
+    depends_on:
+      - db
+    networks:
+      - dev-network
+
+  structurizr:
+    image: structurizr/lite
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../doc/structurizr:/usr/local/structurizr
+    networks:
+      - dev-network
