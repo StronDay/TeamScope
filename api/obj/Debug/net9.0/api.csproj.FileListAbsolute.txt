@@ -31,3 +31,16 @@
 /workspaces/TeamScope/api/obj/Debug/net9.0/api.pdb
 /workspaces/TeamScope/api/obj/Debug/net9.0/api.genruntimeconfig.cache
 /workspaces/TeamScope/api/obj/Debug/net9.0/ref/api.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/Namotion.Reflection.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/Newtonsoft.Json.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/NJsonSchema.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/NJsonSchema.Annotations.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/NJsonSchema.NewtonsoftJson.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/NJsonSchema.Yaml.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/NSwag.Annotations.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/NSwag.AspNetCore.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/NSwag.Core.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/NSwag.Core.Yaml.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/NSwag.Generation.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/NSwag.Generation.AspNetCore.dll
+/workspaces/TeamScope/api/bin/Debug/net9.0/YamlDotNet.dll
