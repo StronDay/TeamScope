@@ -4,6 +4,17 @@
     "service": "app",
     "workspaceFolder": "/workspaces/TeamScope",
 
+    "customizations": {
+
+        "extensions": [
+            "ms-dotnettools.vscode-dotnet-runtime",
+            "ms-dotnettools.csharp",
+            "dbaeumer.vscode-eslint",
+            "ms-dotnettools.csdevkit"
+        ]
+        
+    },
+
 	"mounts": [
         // Только необходимые SSH файлы
         // "source=${localEnv:HOME}/.ssh/${GitHub_SSH_KEY_NAME},target=/home/vscode/.ssh/${GitHub_SSH_KEY_NAME},type=bind,consistency=cached",
