@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "05ERohJSvFY=",
+  "dgSpecHash": "ALXs+pQ7YVw=",
   "success": true,
   "projectFilePath": "/workspaces/TeamScope/api/api.csproj",
   "expectedPackageFiles": [
@@ -124,6 +124,8 @@
     "/home/vscode/.nuget/packages/njsonschema.annotations/11.5.2/njsonschema.annotations.11.5.2.nupkg.sha512",
     "/home/vscode/.nuget/packages/njsonschema.newtonsoftjson/11.5.2/njsonschema.newtonsoftjson.11.5.2.nupkg.sha512",
     "/home/vscode/.nuget/packages/njsonschema.yaml/11.5.2/njsonschema.yaml.11.5.2.nupkg.sha512",
+    "/home/vscode/.nuget/packages/npgsql/9.0.0/npgsql.9.0.0.nupkg.sha512",
+    "/home/vscode/.nuget/packages/npgsql.entityframeworkcore.postgresql/9.0.0/npgsql.entityframeworkcore.postgresql.9.0.0.nupkg.sha512",
     "/home/vscode/.nuget/packages/nswag.annotations/14.6.3/nswag.annotations.14.6.3.nupkg.sha512",
     "/home/vscode/.nuget/packages/nswag.aspnetcore/14.6.3/nswag.aspnetcore.14.6.3.nupkg.sha512",
     "/home/vscode/.nuget/packages/nswag.core/14.6.3/nswag.core.14.6.3.nupkg.sha512",
