@@ -3,6 +3,11 @@ using Staff.Models;
 
 namespace Staff.Infrastructure;
 
+/// <remarks>
+/// Add migrations using the following command inside the 'Staff' project directory:
+///
+/// dotnet ef migrations add [migration-name] -c StaffContext -o Infrastructure/Migrations/
+/// </remarks>
 public class StaffContext : DbContext
 {
     public StaffContext(DbContextOptions<StaffContext> options) : base(options)
