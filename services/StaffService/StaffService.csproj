@@ -22,4 +22,11 @@
     <PackageReference Include="NSwag.AspNetCore" Version="14.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Apis/" />
+    <Folder Include="Extensions/" />
+    <Folder Include="Infrastructure/" />
+    <Folder Include="Infrastructure/Migrations/" />
+  </ItemGroup>
+
 </Project>
