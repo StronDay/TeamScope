@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="Apis/" />
+    <Folder Include="Controllers/" />
     <Folder Include="Extensions/" />
     <Folder Include="Infrastructure/" />
     <Folder Include="Infrastructure/Migrations/" />
