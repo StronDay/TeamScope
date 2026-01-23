@@ -1,4 +1,4 @@
-namespace StaffService;
+namespace StaffService.Models;
 
 public class Staff
 {
