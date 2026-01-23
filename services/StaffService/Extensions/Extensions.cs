@@ -9,7 +9,7 @@ public static class Extensions
     {
         serviceCollection.AddDbContext<StaffContext>( x =>
         {
-            x.UseNpgsql("Host=db;Database=db_default;Username=postgre;Password=postgre;");    
+            x.UseNpgsql("Host=db;Database=db_default;Username=postgres;Password=postgres;");    
         });
 
         return serviceCollection;
