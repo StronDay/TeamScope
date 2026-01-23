@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Staff.Infrastructure;
 using Staff.Models;
 
@@ -9,5 +10,10 @@ internal class PSQLStaffRepository(StaffContext context) : IStaffRepository
     {
         await context.Staff.AddAsync(staffModel, cancellationToken);
         await context.SaveChangesAsync(cancellationToken);
+    }
+
+    public async Task<StaffModel?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
+    {
+        return await context.Staff.FirstOrDefaultAsync(x => x.Id == id, cancellationToken); 
     }
 }
