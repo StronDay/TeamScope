@@ -9,7 +9,7 @@ public static class Extensions
 {
     public static IServiceCollection AddServices(this IServiceCollection serviceCollection)
     {
-        // serviceCollection.AddScoped<IStaffService, StaffService>();
+        serviceCollection.AddScoped<IStaffService, StaffService>();
 
         return serviceCollection;
     }
