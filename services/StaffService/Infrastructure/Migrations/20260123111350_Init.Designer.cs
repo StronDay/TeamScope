@@ -8,10 +8,10 @@ using StaffService.Infrastructure;
 
 #nullable disable
 
-namespace StaffService.Migrations
+namespace StaffService.Infrastructure.Migrations
 {
     [DbContext(typeof(StaffContext))]
-    [Migration("20260123110820_Init")]
+    [Migration("20260123111350_Init")]
     partial class Init
     {
         /// <inheritdoc />

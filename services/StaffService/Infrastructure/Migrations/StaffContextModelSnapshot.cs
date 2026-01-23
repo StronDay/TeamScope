@@ -7,7 +7,7 @@ using StaffService.Infrastructure;
 
 #nullable disable
 
-namespace StaffService.Migrations
+namespace StaffService.Infrastructure.Migrations
 {
     [DbContext(typeof(StaffContext))]
     partial class StaffContextModelSnapshot : ModelSnapshot
