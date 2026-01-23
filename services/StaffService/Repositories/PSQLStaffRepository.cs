@@ -5,11 +5,9 @@ namespace StaffService.Repositories;
 
 internal class PSQLStaffRepository(StaffContext context) : IStaffRepository
 {
-    public async Task<Staff> CreateAsync(Staff staff, CancellationToken cancellationToken = default)
+    public async Task CreateAsync(Staff staff, CancellationToken cancellationToken = default)
     {
         await context.Staff.AddAsync(staff, cancellationToken);
         await context.SaveChangesAsync(cancellationToken);
-
-        return staff;
     }
 }
