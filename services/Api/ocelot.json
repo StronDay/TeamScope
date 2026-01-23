@@ -1,0 +1,36 @@
+
+{
+    "$schema": "https://json.schemastore.org/ocelot.json",
+    "Routes": 
+    [
+        {
+            "UpstreamPathTemplate": "/api/staff",
+            "UpstreamHttpMethod": ["GET"],
+            
+            "DownstreamPathTemplate": "/",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": 
+            [
+                {
+                    "Host": "localhost",
+                    "Port": 5214
+                }
+            ],
+
+            "SwaggerKey": "Staff"
+        }
+    ],
+
+    "SwaggerEndPoints": [
+    {
+      "Key": "Staff",
+      "Config": [
+        {
+          "Name": "API Staff",
+          "Version": "v1",
+          "Url": "http://rrbank.client:5200/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}
