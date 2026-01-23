@@ -6,3 +6,5 @@ postgres-data
 doc/doxygen/doxy_data
 doc/structurizr/.structurizr
 doc/structurizr/workspace.json
+
+services/**/Debug/
