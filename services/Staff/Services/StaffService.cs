@@ -1,13 +1,13 @@
-using StaffService.Models;
-using StaffService.Repositories;
+using Staff.Models;
+using Staff.Repositories;
 
-namespace StaffService.Services;
+namespace Staff.Services;
 
 internal class StaffService(IStaffRepository staffRepository) : IStaffService
 {
     public async Task CreateAsync(string firstName, string secondName, CancellationToken cancellationToken = default)
     {
-        var staff = new Staff
+        var staffModel = new StaffModel
         {
             FirstName = firstName,
             SecondName = secondName,
@@ -17,6 +17,6 @@ internal class StaffService(IStaffRepository staffRepository) : IStaffService
             Email = "simple@simple.com",
         };
 
-        await staffRepository.CreateAsync(staff, cancellationToken);
+        await staffRepository.CreateAsync(staffModel, cancellationToken);
     }
 }

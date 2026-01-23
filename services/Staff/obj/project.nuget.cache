@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2JTKzrW7muc=",
+  "dgSpecHash": "sObS/+ANCX0=",
   "success": true,
-  "projectFilePath": "/workspaces/TeamScope/services/StaffService/StaffService.csproj",
+  "projectFilePath": "/workspaces/TeamScope/services/Staff/Staff.csproj",
   "expectedPackageFiles": [
     "/home/vscode/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/vscode/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",

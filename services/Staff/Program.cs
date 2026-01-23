@@ -1,4 +1,4 @@
-using StaffService.Extensions;
+using Staff.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

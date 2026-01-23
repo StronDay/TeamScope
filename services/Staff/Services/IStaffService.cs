@@ -1,6 +1,4 @@
-using StaffService.Models;
-
-namespace StaffService.Services;
+namespace Staff.Services;
 
 public interface IStaffService
 {

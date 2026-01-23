@@ -1,6 +1,6 @@
-namespace StaffService.Models;
+namespace Staff.Models;
 
-public class Staff
+public class StaffModel
 {
     public int Id { get; set; }
     public string? FirstName { get; set; }

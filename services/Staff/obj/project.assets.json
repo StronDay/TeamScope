@@ -5331,11 +5331,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/TeamScope/services/StaffService/StaffService.csproj",
-      "projectName": "StaffService",
-      "projectPath": "/workspaces/TeamScope/services/StaffService/StaffService.csproj",
+      "projectUniqueName": "/workspaces/TeamScope/services/Staff/Staff.csproj",
+      "projectName": "Staff",
+      "projectPath": "/workspaces/TeamScope/services/Staff/Staff.csproj",
       "packagesPath": "/home/vscode/.nuget/packages/",
-      "outputPath": "/workspaces/TeamScope/services/StaffService/obj/",
+      "outputPath": "/workspaces/TeamScope/services/Staff/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/vscode/.nuget/NuGet/NuGet.Config"

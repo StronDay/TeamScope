@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using StaffService.Infrastructure;
-using StaffService.Repositories;
-using StaffService.Services;
+using Staff.Infrastructure;
+using Staff.Repositories;
+using Staff.Services;
 
-namespace StaffService.Extensions;
+namespace Staff.Extensions;
 
 public static class Extensions
 {
