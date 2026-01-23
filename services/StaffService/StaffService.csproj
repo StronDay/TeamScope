@@ -27,6 +27,8 @@
     <Folder Include="Extensions/" />
     <Folder Include="Infrastructure/" />
     <Folder Include="Infrastructure/Migrations/" />
+    <Folder Include="Repositories/" />
+    <Folder Include="Services/" />
   </ItemGroup>
 
 </Project>
