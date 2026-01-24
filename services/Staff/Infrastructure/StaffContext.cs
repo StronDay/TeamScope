@@ -19,7 +19,8 @@ public class StaffContext : DbContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.Entity<StaffModel>().HasKey(x => x.Id);
-        builder.Entity<StaffModel>().Property(x => x.Email).HasMaxLength(20);
+        builder.Entity<StaffModel>().Property(x => x.PhoneNumber).HasMaxLength(11);
+        builder.Entity<StaffModel>().Property(x => x.Email).HasMaxLength(50);
 
         base.OnModelCreating(builder);
     }
