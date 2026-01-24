@@ -3,6 +3,8 @@
 
 pgadmin-data
 postgres-data
+staff-postgres-data
+account-postgres-data
 doc/doxygen/doxy_data
 doc/structurizr/.structurizr
 doc/structurizr/workspace.json
