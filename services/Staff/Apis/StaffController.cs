@@ -2,6 +2,7 @@ using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Staff.Apis.DTOs;
+using Staff.Core.App.Filters;
 using Staff.Core.App.Services;
 
 namespace Staff.Apis
@@ -20,9 +21,9 @@ namespace Staff.Apis
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] StaffFilter staffFilter)
         {
-            var allStaff = await staffService.GetAllAsync();
+            var allStaff = await staffService.GetAllAsync(staffFilter);
             
             if (allStaff.Count == 0)
             {
