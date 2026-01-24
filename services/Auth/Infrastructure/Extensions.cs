@@ -20,7 +20,7 @@ public static class Extensions
 
         serviceCollection.AddDbContext<AccountContext>( x =>
         {
-            x.UseNpgsql("Host=db;Database=db_default;Username=postgres;Password=postgres;");    
+            x.UseNpgsql("Host=account_db;Database=account_db;Username=postgres;Password=postgres;");    
         });
 
         return serviceCollection;

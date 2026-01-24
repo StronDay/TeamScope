@@ -12,6 +12,11 @@ internal class PSQLAccountRepository(AccountContext context) : IAccountRepositor
         await context.SaveChangesAsync(cancellationToken);
     }
 
+    public async Task<List<AccountModel>> GetAllAsync(CancellationToken cancellationToken = default)
+    {
+        return await context.Accounts.ToListAsync(cancellationToken);
+    }
+
     public async Task<AccountModel?> GetByUserNameAsync(string userName, CancellationToken cancellationToken = default)
     {
         return await context.Accounts.FirstOrDefaultAsync(x => x.UserName == userName, cancellationToken); 

@@ -22,6 +22,11 @@ public class AccountService(IAccountRepository accountRepository) : IAccountServ
         await accountRepository.CreateAsync(accountModel, cancellationToken);
     }
 
+    public async Task<List<AccountModel>> GetAllAsync(CancellationToken cancellationToken = default)
+    {
+        return await accountRepository.GetAllAsync(cancellationToken);
+    }
+
     public async Task<AccountModel?> GetByUserNameAsync(string userName, CancellationToken cancellationToken = default)
     {
         return await accountRepository.GetByUserNameAsync(userName, cancellationToken);

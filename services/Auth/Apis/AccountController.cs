@@ -3,20 +3,40 @@ using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Auth.Apis;
-
-public class AccountController
-{   
+namespace Auth.Apis
+{
     [Route("api/Auth")]
     [ApiController]
-    public class StaffController(IAccountService staffService) : ControllerBase
+    public class AuthController(IAccountService staffService) : ControllerBase
     {
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] string userName, [FromBody] string password)
+        public async Task<IActionResult> CreateAsync(string userName, string password)
         {
             await staffService.CreateAsync(userName, password);
 
             return NoContent();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var accounst = await staffService.GetAllAsync();
+            
+            if (accounst.Count == 0)
+            {
+                return Ok(new 
+                {
+                    message = "There are no employees in the database",
+                    count = 0,
+                    data = new List<object>()
+                });
+            }
+            
+            return Ok(new
+            {
+                count = accounst.Count,
+                data = accounst
+            });
         }
 
         [HttpGet("{userName}")]
@@ -36,3 +56,4 @@ public class AccountController
         }
     }
 }
+

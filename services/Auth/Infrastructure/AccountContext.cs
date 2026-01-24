@@ -6,7 +6,7 @@ namespace Auth.Infrastructure;
 /// <remarks>
 /// Add migrations using the following command inside the 'Auth' project directory:
 ///
-/// dotnet ef migrations add [migration-name] -c AuthContext -o Infrastructure/Migrations/
+/// dotnet ef migrations add [migration-name] -c AccountContext -o Infrastructure/Migrations/
 /// </remarks>
 public class AccountContext : DbContext
 {
