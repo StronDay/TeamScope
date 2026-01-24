@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Mapster" Version="7.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.9" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
@@ -21,6 +22,20 @@
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0" />
     <PackageReference Include="NSwag.AspNetCore" Version="14.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Apis/" />
+    <Folder Include="Apis/DTOs/" />
+    <Folder Include="Core/" />
+    <Folder Include="Core/App/" />
+    <Folder Include="Core/App/Abstractions/" />
+    <Folder Include="Core/App/Services/" />
+    <Folder Include="Core/Domain/" />
+    <Folder Include="Core/Domain/Models/" />
+    <Folder Include="Infrastructure/" />
+    <Folder Include="Infrastructure/Migrations/" />
+    <Folder Include="Infrastructure/Repositories/" />
   </ItemGroup>
 
 </Project>
