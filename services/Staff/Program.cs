@@ -1,4 +1,4 @@
-using Staff.Extensions;
+using Staff.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

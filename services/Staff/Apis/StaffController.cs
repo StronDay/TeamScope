@@ -1,7 +1,8 @@
 using Mapster;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Staff.Services;
+using Staff.Apis.DTOs;
+using Staff.Core.App.Services;
 
 namespace Staff.Apis
 {

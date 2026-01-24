@@ -1,7 +1,8 @@
-namespace Staff.Apis;
+namespace Staff.Core.Domain.Models;
 
-public class GetStaffRespoce
+public class StaffModel
 {
+    public int Id { get; set; }
     public string? FirstName { get; set; }
     public string? SecondName { get; set; }
     public string? Patronymic { get; set; }

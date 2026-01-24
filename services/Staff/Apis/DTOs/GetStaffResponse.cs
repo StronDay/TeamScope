@@ -1,6 +1,6 @@
-namespace Staff.Apis;
+namespace Staff.Apis.DTOs;
 
-public class CreateStaffRequest
+public class GetStaffRespoce
 {
     public string? FirstName { get; set; }
     public string? SecondName { get; set; }

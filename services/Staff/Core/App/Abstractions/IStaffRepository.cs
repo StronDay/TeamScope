@@ -1,7 +1,6 @@
-using Staff.Models;
-using Staff.Infrastructure;
+using Staff.Core.Domain.Models;
 
-namespace Staff.Repositories;
+namespace Staff.Core.App.Abstractions;
 
 public interface IStaffRepository
 {

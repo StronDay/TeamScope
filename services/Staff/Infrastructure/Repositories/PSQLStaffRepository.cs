@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using Staff.Infrastructure;
-using Staff.Models;
+using Staff.Core.App.Abstractions;
+using Staff.Core.Domain.Models;
 
-namespace Staff.Repositories;
+namespace Staff.Infrastructure.Repositories;
 
 internal class PSQLStaffRepository(StaffContext context) : IStaffRepository
 {

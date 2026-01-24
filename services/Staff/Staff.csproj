@@ -24,12 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions/" />
-    <Folder Include="Infrastructure/" />
     <Folder Include="Infrastructure/Migrations/" />
-    <Folder Include="Models/" />
-    <Folder Include="Repositories/" />
-    <Folder Include="Services/" />
+    <Folder Include="Infrastructure/Repositories/" />
+    <Folder Include="Apis/DTOs/" />
+    <Folder Include="Core/App/Abstractions" />
+    <Folder Include="Core/App/Services" />
+    <Folder Include="Core/Domain/Models" />
   </ItemGroup>
 
 </Project>

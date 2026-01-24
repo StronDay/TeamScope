@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Staff.Models;
+using Staff.Core.Domain.Models;
 
 namespace Staff.Infrastructure;
 

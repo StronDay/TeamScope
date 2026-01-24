@@ -1,7 +1,7 @@
-using Staff.Models;
-using Staff.Apis;
+using Staff.Core.Domain.Models;
+using Staff.Apis.DTOs;
 
-namespace Staff.Services;
+namespace Staff.Core.App.Services;
 
 public interface IStaffService
 {

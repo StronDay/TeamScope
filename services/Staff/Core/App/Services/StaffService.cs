@@ -1,10 +1,10 @@
 using Mapster;
-using Staff.Models;
-using Staff.Repositories;
+using Staff.Core.App.Abstractions;
+using Staff.Core.Domain.Models;
 
-using Staff.Apis;
+using Staff.Apis.DTOs;
 
-namespace Staff.Services;
+namespace Staff.Core.App.Services;
 
 internal class StaffService(IStaffRepository staffRepository) : IStaffService
 {
