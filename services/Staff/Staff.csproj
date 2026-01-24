@@ -24,9 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Apis/" />
-    <Folder Include="Apis/Contrellers/" />
-    <Folder Include="Controllers/" />
     <Folder Include="Extensions/" />
     <Folder Include="Infrastructure/" />
     <Folder Include="Infrastructure/Migrations/" />

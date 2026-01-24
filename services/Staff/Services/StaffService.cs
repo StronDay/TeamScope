@@ -1,23 +1,16 @@
+using Mapster;
 using Staff.Models;
 using Staff.Repositories;
+
+using Staff.Apis;
 
 namespace Staff.Services;
 
 internal class StaffService(IStaffRepository staffRepository) : IStaffService
 {
-    public async Task CreateAsync(string firstName, string secondName, CancellationToken cancellationToken = default)
+    public async Task CreateAsync(CreateStaffRequest createStaffRequest, CancellationToken cancellationToken = default)
     {
-        var staffModel = new StaffModel
-        {
-            FirstName = firstName,
-            SecondName = secondName,
-            Age = 23,
-            JobPosition = "developer",
-            PhoneNumber = 999,
-            Email = "simple@simple.com",
-        };
-
-        await staffRepository.CreateAsync(staffModel, cancellationToken);
+        await staffRepository.CreateAsync(createStaffRequest.Adapt<StaffModel>(), cancellationToken);
     }
 
     public async Task<List<StaffModel>> GetAllAsync(CancellationToken cancellationToken = default)
