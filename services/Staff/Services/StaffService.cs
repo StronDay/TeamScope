@@ -19,4 +19,14 @@ internal class StaffService(IStaffRepository staffRepository) : IStaffService
 
         await staffRepository.CreateAsync(staffModel, cancellationToken);
     }
+
+    public async Task<List<StaffModel>> GetAllAsync(CancellationToken cancellationToken = default)
+    {
+        return await staffRepository.GetAllAsync(cancellationToken);
+    }
+
+    public async Task<StaffModel?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
+    {
+        return await staffRepository.GetByIdAsync(id, cancellationToken);
+    }
 }

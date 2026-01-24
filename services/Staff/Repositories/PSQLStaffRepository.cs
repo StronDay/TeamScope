@@ -12,6 +12,11 @@ internal class PSQLStaffRepository(StaffContext context) : IStaffRepository
         await context.SaveChangesAsync(cancellationToken);
     }
 
+    public async Task<List<StaffModel>> GetAllAsync(CancellationToken cancellationToken = default)
+    {
+        return await context.Staff.ToListAsync(cancellationToken);
+    }
+
     public async Task<StaffModel?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
     {
         return await context.Staff.FirstOrDefaultAsync(x => x.Id == id, cancellationToken); 
