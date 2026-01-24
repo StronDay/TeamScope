@@ -21,7 +21,7 @@ namespace Staff.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Staff.Models.StaffModel", b =>
+            modelBuilder.Entity("Staff.Core.Domain.Models.StaffModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

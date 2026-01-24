@@ -11,8 +11,8 @@ using Staff.Infrastructure;
 namespace Staff.Infrastructure.Migrations
 {
     [DbContext(typeof(StaffContext))]
-    [Migration("20260124173754_AddNew")]
-    partial class AddNew
+    [Migration("20260124221828_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace Staff.Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Staff.Models.StaffModel", b =>
+            modelBuilder.Entity("Staff.Core.Domain.Models.StaffModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,8 +36,8 @@ namespace Staff.Infrastructure.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("text");

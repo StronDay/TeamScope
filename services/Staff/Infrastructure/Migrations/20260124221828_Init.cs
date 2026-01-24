@@ -19,10 +19,11 @@ namespace Staff.Infrastructure.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     FirstName = table.Column<string>(type: "text", nullable: true),
                     SecondName = table.Column<string>(type: "text", nullable: true),
+                    Patronymic = table.Column<string>(type: "text", nullable: true),
                     Age = table.Column<int>(type: "integer", nullable: false),
                     JobPosition = table.Column<string>(type: "text", nullable: true),
-                    PhoneNumber = table.Column<int>(type: "integer", nullable: false),
-                    Email = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true)
+                    PhoneNumber = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: true),
+                    Email = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
