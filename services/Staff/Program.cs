@@ -1,6 +1,7 @@
 using Staff.Infrastructure;
 using NSwag.Generation.Processors.Security;
 using NSwag;
+using Staff.Core.App.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,13 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddServices();
 builder.Services.AddDataAccess();
+
+builder.Services.Configure<AuthSettings>
+(
+    builder.Configuration.GetSection("AuthSettings")
+);
+
+builder.Services.AddAuth(builder.Configuration);
 
 builder.Services.AddOpenApiDocument();
 
@@ -38,6 +46,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

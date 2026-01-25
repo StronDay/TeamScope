@@ -1,4 +1,5 @@
 using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Staff.Apis.DTOs;
@@ -12,6 +13,7 @@ namespace Staff.Apis
     [ApiController]
     public class StaffController(IStaffService staffService) : ControllerBase
     {
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] CreateStaffRequest createStaffRequest)
         {
@@ -20,6 +22,7 @@ namespace Staff.Apis
             return NoContent();
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] StaffFilter staffFilter)
         {
@@ -39,6 +42,25 @@ namespace Staff.Apis
             {
                 count = allStaff.Count,
                 data = allStaff.Adapt<List<GetStaffRespoce>>()
+            });
+        }
+
+        [Authorize]
+        [HttpGet("check-cookies")]
+        public IActionResult CheckCookies()
+        {
+            var cookies = Request.Cookies.Select(c => new 
+            { 
+                Name = c.Key, 
+                Value = c.Key == "jwt_token" ? "[HIDDEN]" : c.Value,
+                Length = c.Value?.Length ?? 0
+            }).ToList();
+            
+            return Ok(new 
+            {
+                message = "Current cookies",
+                cookies = cookies,
+                count = cookies.Count
             });
         }
 

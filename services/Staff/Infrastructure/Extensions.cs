@@ -1,4 +1,7 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Namotion.Reflection;
 using Staff.Core.App.Abstractions;
 using Staff.Core.App.Filters;
@@ -24,6 +27,40 @@ public static class Extensions
     public static IServiceCollection AddServices(this IServiceCollection serviceCollection)
     {
         serviceCollection.AddScoped<IStaffService, StaffService>();
+
+        return serviceCollection;
+    }
+
+    public static IServiceCollection AddAuth(this IServiceCollection serviceCollection, IConfiguration config)
+    {
+        var authSetting = config.GetSection(nameof(AuthSettings))
+            .Get<AuthSettings>();
+
+        serviceCollection.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(o =>
+            {
+                o.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(
+                        Encoding.UTF8.GetBytes(authSetting.SecretKey)),
+                    ClockSkew = TimeSpan.Zero
+                };
+                
+                // Чтение токена только из куки
+                o.Events = new JwtBearerEvents
+                {
+                    OnMessageReceived = context =>
+                    {
+                        // Получаем токен из куки
+                        context.Token = context.Request.Cookies["jwt_token"];
+                        return Task.CompletedTask;
+                    }
+                };
+            });
 
         return serviceCollection;
     }
