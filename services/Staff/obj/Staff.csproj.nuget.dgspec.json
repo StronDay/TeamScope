@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/TeamScope/services/Staff/Staff.csproj": {}
+    "/workspaces/Staff/Staff.csproj": {}
   },
   "projects": {
-    "/workspaces/TeamScope/services/Staff/Staff.csproj": {
+    "/workspaces/Staff/Staff.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/TeamScope/services/Staff/Staff.csproj",
+        "projectUniqueName": "/workspaces/Staff/Staff.csproj",
         "projectName": "Staff",
-        "projectPath": "/workspaces/TeamScope/services/Staff/Staff.csproj",
-        "packagesPath": "/home/vscode/.nuget/packages/",
-        "outputPath": "/workspaces/TeamScope/services/Staff/obj/",
+        "projectPath": "/workspaces/Staff/Staff.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/workspaces/Staff/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/vscode/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"

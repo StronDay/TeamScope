@@ -6178,19 +6178,19 @@
     ]
   },
   "packageFolders": {
-    "/home/vscode/.nuget/packages/": {}
+    "/root/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/workspaces/TeamScope/services/Auth/Auth.csproj",
+      "projectUniqueName": "/workspaces/Auth/Auth.csproj",
       "projectName": "Auth",
-      "projectPath": "/workspaces/TeamScope/services/Auth/Auth.csproj",
-      "packagesPath": "/home/vscode/.nuget/packages/",
-      "outputPath": "/workspaces/TeamScope/services/Auth/obj/",
+      "projectPath": "/workspaces/Auth/Auth.csproj",
+      "packagesPath": "/root/.nuget/packages/",
+      "outputPath": "/workspaces/Auth/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/vscode/.nuget/NuGet/NuGet.Config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"

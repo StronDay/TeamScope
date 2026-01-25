@@ -6,7 +6,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "staff_service",
           "Port": 5022
         }
       ],
@@ -19,7 +19,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
+          "Host": "auth_service",
           "Port": 5066
         }
       ],
@@ -35,7 +35,7 @@
         {
           "Name": "Staff Service",
           "Version": "v1",
-          "Url": "http://localhost:5022/swagger/v1/swagger.json"
+          "Url": "http://staff_service:5022/swagger/v1/swagger.json"
         }
       ]
     },
@@ -45,7 +45,7 @@
         {
           "Name": "Auth Service",
           "Version": "v1",
-          "Url": "http://localhost:5066/swagger/v1/swagger.json"
+          "Url": "http://auth_service:5066/swagger/v1/swagger.json"
         }
       ]
     }

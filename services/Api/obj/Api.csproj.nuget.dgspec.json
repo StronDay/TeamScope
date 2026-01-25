@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/TeamScope/services/Api/Api.csproj": {}
+    "/workspaces/Api/Api.csproj": {}
   },
   "projects": {
-    "/workspaces/TeamScope/services/Api/Api.csproj": {
+    "/workspaces/Api/Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/TeamScope/services/Api/Api.csproj",
+        "projectUniqueName": "/workspaces/Api/Api.csproj",
         "projectName": "Api",
-        "projectPath": "/workspaces/TeamScope/services/Api/Api.csproj",
-        "packagesPath": "/home/vscode/.nuget/packages/",
-        "outputPath": "/workspaces/TeamScope/services/Api/obj/",
+        "projectPath": "/workspaces/Api/Api.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/workspaces/Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/vscode/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
