@@ -1,4 +1,8 @@
+using Auth.Core.App.Services;
 using Auth.Infrastructure;
+using NSwag;
+using NSwag.Generation.AspNetCore;
+using NSwag.Generation.Processors.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +13,27 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddServices();
 builder.Services.AddDataAccess();
+
+builder.Services.Configure<AuthSettings>
+(
+    builder.Configuration.GetSection("AuthSettings")
+);
+
+builder.Services.AddAuth(builder.Configuration);
+
+builder.Services.AddOpenApiDocument(options =>
+{
+    options.AddSecurity("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "Bearer token auth header",
+        Type = OpenApiSecuritySchemeType.Http,
+        In = OpenApiSecurityApiKeyLocation.Header,
+        Name = "Authorization",
+        Scheme = "Bearer"
+    });
+
+    options.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("Bearer"));
+});
 
 var app = builder.Build();
 
@@ -24,5 +49,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
 app.Run();

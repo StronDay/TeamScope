@@ -5,9 +5,9 @@ using Npgsql.Internal;
 
 namespace Auth.Core.App.Services;
 
-public class AccountService(IAccountRepository accountRepository) : IAccountService
+public class AccountService(IAccountRepository accountRepository, JwtService jwtService) : IAccountService
 {
-    public async Task CreateAsync(string userName, string password, CancellationToken cancellationToken = default)
+    public async Task RegisterAsync(string userName, string password, CancellationToken cancellationToken = default)
     {
         var accountModel = new AccountModel
         {
@@ -20,6 +20,34 @@ public class AccountService(IAccountRepository accountRepository) : IAccountServ
         accountModel.PasswordHash = passwordHash; 
 
         await accountRepository.CreateAsync(accountModel, cancellationToken);
+    }
+
+    public async Task<string> Login(string userName, string password, CancellationToken cancellationToken = default)
+    {
+        var account = await accountRepository.GetByUserNameAsync(userName);
+
+        if (account == null)
+        {
+            throw new UnauthorizedAccessException("Invalid username or password");
+        }
+
+        var result = new PasswordHasher<AccountModel>().VerifyHashedPassword
+        (
+            account, 
+            account.PasswordHash,
+            password
+        );
+
+        if (result == PasswordVerificationResult.Success)
+        {
+            return jwtService.GenerateToken(account);
+        }
+        else
+        {
+            throw new UnauthorizedAccessException("Invalid username or password");
+        }
+
+        throw new NotImplementedException();
     }
 
     public async Task<List<AccountModel>> GetAllAsync(CancellationToken cancellationToken = default)
