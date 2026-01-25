@@ -1,28 +1,43 @@
 using Staff.Infrastructure;
+using NSwag.Generation.Processors.Security;
+using NSwag;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddServices();
 builder.Services.AddDataAccess();
 
+builder.Services.AddOpenApiDocument();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseOpenApi(config =>
+{
+    config.PostProcess = (document, request) =>
+    {
+        document.Info.Title = "Staff Service API";
+        document.Info.Version = "v1";
+    };
+    
+    // Убедитесь, что путь правильный
+    config.Path = "/swagger/v1/swagger.json";
+});
+
+// Настройка конвейера HTTP запросов
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.UseSwaggerUi(options =>
+    app.UseSwaggerUi(config =>
     {
-        options.DocumentPath = "/openapi/v1.json";
+        config.Path = "/swagger"; // UI будет доступен по /swagger
+        config.DocumentPath = "/swagger/v1/swagger.json"; // Путь к документу
     });
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthorization();
 app.MapControllers();
 app.Run();

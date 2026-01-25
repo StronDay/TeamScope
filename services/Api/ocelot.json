@@ -1,34 +1,51 @@
-
 {
-    "$schema": "https://json.schemastore.org/ocelot.json",
-    "Routes": 
-    [
-        {
-            "UpstreamPathTemplate": "/api/staff",
-            "UpstreamHttpMethod": ["GET"],
-            
-            "DownstreamPathTemplate": "/",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": 
-            [
-                {
-                    "Host": "localhost",
-                    "Port": 5214
-                }
-            ],
-
-            "SwaggerKey": "Staff"
-        }
-    ],
-
-    "SwaggerEndPoints": [
+  "$schema": "https://json.schemastore.org/ocelot.json",
+  "Routes": [
     {
-      "Key": "Staff",
+      "DownstreamPathTemplate": "/api/Staff{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5022
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Staff/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "SwaggerKey": "staff"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Auth/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5066
+        }
+      ],
+      "UpstreamPathTemplate": "/api/Auth/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "SwaggerKey": "auth"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "staff",
       "Config": [
         {
-          "Name": "API Staff",
+          "Name": "Staff Service",
           "Version": "v1",
-          "Url": "http://rrbank.client:5200/swagger/v1/swagger.json"
+          "Url": "http://localhost:5022/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "auth",
+      "Config": [
+        {
+          "Name": "Auth Service",
+          "Version": "v1",
+          "Url": "http://localhost:5066/swagger/v1/swagger.json"
         }
       ]
     }

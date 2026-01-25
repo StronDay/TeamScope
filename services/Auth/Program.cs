@@ -37,15 +37,41 @@ builder.Services.AddOpenApiDocument(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// app.UseOpenApi(); // Это Middleware для генерации OpenAPI документа
+// app.UseSwaggerUi(); // UI для NSwag (опционально для сервиса)
+
+// ИЛИ более явно:
+app.UseOpenApi(config =>
+{
+    config.PostProcess = (document, request) =>
+    {
+        document.Info.Title = "Auth Service API";
+        document.Info.Version = "v1";
+    };
+    
+    // Убедитесь, что путь правильный
+    config.Path = "/swagger/v1/swagger.json";
+});
+
+// Если нужен UI
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.UseSwaggerUi(options =>
+    app.UseSwaggerUi(config =>
     {
-        options.DocumentPath = "/openapi/v1.json";
+        config.Path = "/swagger"; // UI будет доступен по /swagger
+        config.DocumentPath = "/swagger/v1/swagger.json"; // Путь к документу
     });
 }
+
+// // Configure the HTTP request pipeline.
+// if (app.Environment.IsDevelopment())
+// {
+//     app.MapOpenApi();
+//     app.UseSwaggerUi(options =>
+//     {
+//         options.DocumentPath = "/openapi/v1.json";
+//     });
+// }
 
 app.UseHttpsRedirection();
 
